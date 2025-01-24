@@ -1,0 +1,492 @@
+.sidebar
+    width: 32.8rem
+    transition: var(--animation-sidebar)
+    & .profile
+        color: rgb(var(--text-r))
+        padding: 1rem 0
+        & a::after
+            content: none
+        &__img
+            object-fit: cover
+            height: 100%
+            width: 100%
+            &__wrap
+                transition: var(--animation-sidebar)
+                width: 10rem
+                height: 10rem
+                border-radius: 50%
+                overflow: hidden
+                margin: 0 auto
+                border: 1px solid rgb(var(--bg-shadow))
+        &__info
+            transition: var(--animation-sidebar)
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+            &__name
+                transition: var(--animation-sidebar)
+                width: 100%
+                text-align: center
+                font-size: 1.4rem
+                & span
+                    font-weight: 500
+            &__mail
+                transition: var(--animation-sidebar)
+                text-align: center
+                font-size: 1.2rem
+                color: rgba(var(--text-r), .5)
+            &__button
+                transition: var(--animation-sidebar)
+                width: 1.4rem
+                height: 1.4rem
+                margin: 0 0.2rem
+                & svg
+                    transition: 0.2s ease
+                    fill: rgba(var(--text-r), 0.1)
+        &:hover svg
+            fill: rgb(var(--text-r))
+
+    & .nav
+        &__header
+            position: relative
+            height: 12rem
+            width: 32.8rem
+            display: inline-block
+            text-align: left
+            position: absolute
+            top:0
+            background: rgb(var(--bg))
+            transition: all .2s ease
+            z-index: 5
+            transition: var(--animation-sidebar)
+            &::after
+                content: ''
+                height: 100%
+                width: 10px
+                background: linear-gradient(0.25turn, rgba(var(--bg-shadow), .5), transparent)
+                position: absolute
+                top: 0
+                right: -10px
+            & .logo
+                display: flex
+                justify-content: start
+                align-items: center
+                height: 100%
+                &__abbr 
+                    transition: var(--animation-sidebar)
+                    width: 4.7rem
+                    margin-right: 2rem
+                    margin-left: 2rem
+                    // @include respond('laptop') 
+                    // 	max-width: 45px
+                    
+                    // @include respond('phone') 
+                    // 	width:35px
+                    // 	height:35px
+                &__text
+                    color: rgb(var(--text-r))
+                    font-size: 2rem
+                    text-transform: uppercase
+                    transform: scaleX(1)
+                    transition: var(--animation-sidebar)
+
+                & .logo__compact 
+                    display: none
+        &__control 
+            cursor: pointer
+            position: absolute
+            right: 1.75rem
+            text-align: center
+            top: 55%
+            transform: translateY(-50%)
+            z-index: 9999
+            font-size: 1.4rem
+            padding: 2px 0.5rem 0
+            border-radius: 2px
+            transition: var(--animation-sidebar)
+            // @include respond('laptop') 
+            // 	right: 0.75rem
+            
+            // @include respond('phone-land') 
+            //     right: -3rem
+            
+            // @include respond('phone') 
+            //     right: -3rem
+        &__text
+            transition: var(--animation-sidebar)   
+        &__icon
+            width: 2.8rem
+            height: 2.8rem
+            transition: var(--animation-sidebar)
+        &__item
+            transition: var(--animation-sidebar)
+            width: 80%
+            justify-content: center
+            & a
+                height: 3.8rem
+                justify-content: center
+                margin: 5px
+                transition: all var(--animation-sidebar), background 0.2s ease
+            &:hover a
+                background-color: rgba(var(--bg-shadow), .8)
+    &_compact
+        width: 10.4rem
+        & .profile
+            &__img
+                &__wrap
+                    width: 5.7rem
+                    height: 5.7rem
+            &__info
+                transform: scaleX(0)
+                &__name,
+                &__mail,
+                &__button
+                    font-size: 0
+
+        & .nav
+            &__control
+                right: -5rem
+            &__header
+                width: 10.4rem
+                & .logo
+                    justify-content: start
+                    margin-left: 0
+                    &__abbr
+                        width: 5.7rem
+                        margin: 0 2.35rem
+                    &__text
+                        font-size: 0rem
+                        transform: scaleX(0)
+            &__text
+                font-size: 0rem
+                transform: scaleX(0)
+            &__icon
+                width: 3.7rem
+                height: 3.7rem
+
+            &__item
+                padding: 0
+                & a
+                    text-align: center
+                    height: 5.7rem
+                    
+        & .metismenu
+            & > a
+                width: 7.4rem
+                height: 5.7rem
+                justify-content: center
+
+.deznav
+    &__scroll
+        background: rgb(var(--bg))
+        min-height: calc( 100vh - 12rem )
+
+.metismenu
+    justify-content: center
+    & > a
+        background: rgb(var(--bg-shadow))
+        color: rgb(var(--text-r))
+        display: flex
+        align-items: center
+        text-transform: capitalize
+        font-size: 1.8rem
+        font-weight: 400
+        border-radius: 30px
+        margin: 1px 5px
+        & svg
+            fill: rgb(var(--primary))
+            width: 2rem
+            margin: 0 0.5rem
+    & > div
+        & > a
+            background: rgb(var(--bg-shadow))
+            color: rgb(var(--text-r))
+            display: flex
+            align-items: center
+            text-transform: capitalize
+            font-size: 1.8rem
+            font-weight: 400
+            border-radius: 30px
+            padding: 5px
+            margin: 5px
+            &::after
+                content: none
+            & svg
+                fill: rgb(var(--primary))
+                width: 2rem
+                margin: 0 0.5rem
+        & > div
+            position: relative !important
+            transform: translate(0) !important
+            background: #00a
+            // left: 2rem
+            // inset: 0 auto auto 0rem 
+            & a
+                display: flex
+                align-items: center
+                justify-content: center
+                font-size: 1.4rem
+                & svg
+                    width: 1.8rem
+                    margin: 0 0.5rem
+                &:hover
+                    background: #006
+                
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+[data-sidebar-style="mini"],
+[data-layout="horizontal"] 
+    .nav__control 
+        display: none
+    
+
+
+[data-sidebar-style="overlay"] 
+    // @include respond('phone-land') 
+    //     .nav-header .logo-abbr 
+    //         display: block
+        
+    
+
+
+[data-header-position="fixed"] 
+    .nav__header 
+        position: fixed
+    
+    
+    // @include respond ('laptop')
+    // 	height:5.5rem
+    //     width: 17rem
+    
+    & .brand__logo 
+        display: flex
+        height: 100%
+        width: 100%
+        justify-content: space-evenly
+        align-items: center
+        font-size: 1.125rem
+        color: rgb(var(--white))
+        text-decoration: none
+        padding-left: 30px
+        padding-right: 30px
+        font-weight: 700
+        
+        // @include respond('laptop') 
+        //     padding-left: 20px
+        //     padding-right:20px
+        
+        
+        [data-sidebar-style="compact"] &,
+        [data-sidebar-style="mini"] & 
+            padding-left: 0
+            padding-right: 0
+            justify-content: center
+        
+        // @include respond('phone-land') 
+        //     padding-left: 0
+        //     padding-right: 0
+        //     justify-content: center
+        
+    
+    .brand-title 
+        margin-left: 15px
+        max-width: 140px
+        font-size: 38px
+        color: rgb(var(--black))
+        @at-root [data-theme-version="dark"] & 
+            background-position: 0 120%
+        
+    
+    // @include respond ('phone-land')
+    // 	top:0
+    // 	background:transparent
+    
+    .svg-logo-primary-path
+        fill: rgb(var(--primary))
+    
+    .svg-title-path
+        fill: rgb(var(--primary))
+
+    
+    .rect-primary-rect
+        fill: rgb(var(--primary))
+    
+
+
+// @include respond('tab-land') 
+// 	.nav-header 
+// 		height:5rem
+    
+
+// @include custommq($max:1023px) 
+//     .nav-header 
+//         width: 5rem
+//         .brand-title 
+//             display: none
+        
+    
+
+
+
+    
+
+
+////////////////////
+// Humbuger Icon
+////////////////////
+.hamburger 
+    display: inline-block
+    left: 0px
+    position: relative
+    top: 0px
+    -webkit-transition: all 0.3s ease-in-out 0s
+    transition: all 0.3s ease-in-out 0s
+    width: 26px
+    z-index: 999
+
+    &__line 
+        background:  rgb(var(--white))
+        display: block
+        height: 3px
+        border-radius: 3px
+        margin-top: 6px
+        margin-bottom: 6px
+        margin-right: auto
+        -webkit-transition: all 0.3s ease-in-out
+        transition: all 0.3s ease-in-out
+        
+        &:nth-child(1),
+        &:nth-child(2)
+
+            width: 26px
+        &:nth-child(3)
+            width: 15px
+    &:hover
+        cursor: pointer
+        & .hamburger__line
+            width: 26px
+
+    &.is_active
+        & .hamburger__line
+            &:nth-child(1),
+            &:nth-child(3)
+                width: 10px
+                height: 2px
+
+            &:nth-child(2)
+                -webkit-transform: translateX(0px)
+                transform: translateX(0px)
+                width: 22px
+            &:nth-child(1)
+                transform: translateY(5px) translateX(14px) rotate(45deg)                
+            &:nth-child(3) 
+                transform: translateY(-5px) translateX(14px) rotate(-45deg)      
+
+@media (min-width:767px) 
+    [data-sidebar-style="compact"] 
+        .nav-control 
+            display: none
+        
+        .nav-header 
+            width: 11.25rem
+        
+    
+
+
+[data-sidebar-style="full"][data-layout="vertical"] 
+    .menu-toggle 
+        .brand-title 
+            display: none
+        
+        .nav-header 
+            .logo-abbr 
+                display: block
+            
+        
+    
+
+
+[data-sidebar-style="full"][data-layout="horizontal"] 
+    .logo-compact 
+        display: none
+    
+
+
+[data-sidebar-style="mini"] 
+    .nav-header 
+        height:6.5rem
+        .logo-abbr 
+            display: block
+        
+        // @include custommq($max: 1023px)
+        //     height:5.5rem
+        
+    
+
+
+[data-sidebar-style="compact"][data-layout="vertical"] 
+    .nav-header 
+        .brand-title 
+            display: none
+        
+        .logo-compact 
+            max-width: 75px
+        
+    
+
+[data-sidebar-style="compact"][data-layout="horizontal"] 
+    .nav-header .brand-logo 
+        padding-left: 30px
+        padding-right: 30px
+        justify-content: start
+    
+
+[data-sidebar-style="modern"][data-layout="vertical"] 
+    .nav-header 
+        width: 10.625rem
+        .brand-title 
+            display: none
+        
+        .logo-compact 
+            display: none
+        
+    
+
+
+// .profile
+//     margin-left: auto
+//     padding-left: auto
+//     margin-right: 15px
+//     padding-right: 30px
+//     border-right: 1px solid #f00
+//     border-left:0
+//     &__info
+//         padding-right: 20px
+//         padding-left: auto
+//         text-align: right
+
+        // 	@include respond('laptop') 
+        // 		padding-right: 10px
+        // 	
+        // 
+        // @include respond ('laptop')
+        // 	margin-right: 10px
+        // 	padding-right: 20px
+        // 
+        // @include respond ('phone')
+        // 	margin-right: 0px
+        // 	padding-right:0px
+        // 	border-right:0
+        // 
+    

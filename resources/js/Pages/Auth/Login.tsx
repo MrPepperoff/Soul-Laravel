@@ -7,6 +7,8 @@ import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
+import style from './Login.module.sass';
+
 export default function Login({
     status,
     canResetPassword,
@@ -29,7 +31,7 @@ export default function Login({
     };
 
     return (
-        <GuestLayout>
+        <GuestLayout >
             <Head title="Log in" />
 
             {status && (
@@ -38,13 +40,12 @@ export default function Login({
                 </div>
             )}
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className={style.form}>
                 <div>
-                    <InputLabel htmlFor="email" value="Email" />
-
+                    <InputLabel htmlFor="email" value="Логин" />
                     <TextInput
                         id="email"
-                        type="email"
+                        type="text"
                         name="email"
                         value={data.email}
                         className="mt-1 block w-full"
@@ -57,7 +58,7 @@ export default function Login({
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="password" value="Пароль" />
 
                     <TextInput
                         id="password"
@@ -73,16 +74,21 @@ export default function Login({
                 </div>
 
                 <div className="mt-4 block">
-                    <label className="flex items-center">
-                        <Checkbox
+                    <label className={style.rememberCheckbox+" flex items-center"} htmlFor='remember'>
+                        <Checkbox 
+                            className={style.rememberCheckbox__checkbox}
+                            id='remember'
                             name="remember"
                             checked={data.remember}
                             onChange={(e) =>
                                 setData('remember', e.target.checked)
                             }
                         />
-                        <span className="ms-2 text-sm text-gray-600">
-                            Remember me
+                        <span className={style.rememberCheckbox__checkboxStyle}>
+                        </span>
+                        
+                        <span className={style.rememberCheckbox__text+" ms-2 text-sm text-gray-600"}>
+                            Запомни меня
                         </span>
                     </label>
                 </div>
@@ -93,12 +99,12 @@ export default function Login({
                             href={route('password.request')}
                             className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
-                            Forgot your password?
+                            Забыли пароль
                         </Link>
                     )}
 
                     <PrimaryButton className="ms-4" disabled={processing}>
-                        Log in
+                        Войти
                     </PrimaryButton>
                 </div>
             </form>

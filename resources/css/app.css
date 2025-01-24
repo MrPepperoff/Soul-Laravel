@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+    --bg: 30,25,26;
+    --bg-shadow: 17, 14, 15;
+    --text: 30,25,26;
+    --text-r: 225, 230, 229;
+    --primary: 238, 154, 9;
+    --l-ctd: 200, 0, 0;
+    --black: 0, 0, 0;
+    --white: 255, 255, 255;
+    --radius: 50%;
+    --animation-sidebar: 0.5s ease
+}
+
+html{
+    font-size: 10px;
+}
+body{
+    background: rgb(var(--bg-shadow));
+}

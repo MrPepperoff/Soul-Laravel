@@ -1,0 +1,39 @@
+.form 
+    
+    & label
+        font-size: 1.6rem
+        color: rgb(30,25,26)
+        & span
+            color: rgb(30,25,26)
+            font-weight: 400
+
+
+    & input
+        font-size: 1.6rem
+        margin: 1rem 0
+    & button
+        font-size: 1.4rem
+        background: rgb(216,80,48)
+    & .rememberCheckbox
+        &__checkbox
+            display: none
+            &:checked + .rememberCheckbox__checkboxStyle
+                position: relative
+                &::after
+                    position: absolute
+                    inset: 0
+                    content: '\2713'
+                    font-weight: bold
+                    color: rgb(var(--text-r))
+                    text-shadow: 0 0 2px rgb(var(--bg))
+                    background: rgb(var(--bg))
+                    font-size: 2.4rem
+                    line-height: 1.2rem
+                    text-align: center
+            &Style
+                width: 1.4rem
+                height: 1.4rem
+                border-radius: 3px
+                border: 1px solid rgb(var(--bg))
+        &__text
+            font-size: 1.2rem

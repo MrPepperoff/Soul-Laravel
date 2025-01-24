@@ -1,0 +1,404 @@
+.navbar
+    width: 100%
+    &__nav
+        display: flex
+        flex-direction: row
+        justify-content: end
+        align-items: center
+        height: 100%
+        width: 100%
+    &__icon
+        position: relative
+        background: rgb(var(--bg-shadow))
+        border-radius: 50%
+        padding: 10px
+        margin: 0 10px
+        & span
+            position: absolute
+            top: -0.6rem
+            right: -0.6rem
+            background: rgb(var(--l-ctd))
+            border-radius: 50%
+            font-size: 1.4rem
+            width: 2rem
+            height: 2rem
+            text-align: center
+.dropdown
+    position: relative
+    & a
+        &::after
+            content: none
+    & > div
+        color: rgb(var(--text-r))
+        background: rgb(var(--bg-shadow))
+        position: absolute
+        right: 25%
+        padding: 10px 
+        height: 200px
+        margin-top: 10px 
+        overflow: auto
+    &__card
+        background: #00a
+        width: 150px
+        height: 50px
+        display: flex
+        font-size: 1.2rem
+        & img
+            display: block
+            margin: 2.5px
+            height: 45px
+            width: 45px
+            border-radius: 50%
+.header 
+    height: 12rem
+    z-index: 1
+    position: relative
+    padding: 0rem
+    z-index: 3
+    padding-left: 32.8rem
+    padding-top: 0px
+    transition: var(--animation-sidebar)
+    background: rgb(var(--bg))
+
+    &_compact
+        padding-left: 14rem
+
+    &__content 
+        height: 100%
+        padding-left: 3rem
+        padding-right: 1.875rem
+        align-items: center
+        display: flex
+		
+        // @include respond ('laptop') 
+        //     padding-left:2rem
+		
+        // @include custommq($max: 767px) 
+        //     padding-left: 3.75rem
+        //     padding-right: 0.938rem
+        
+		
+    
+    & .navbar 
+        padding: 0
+        height: 100%
+        width: 100%
+        &__collapse 
+            height: 100%
+            width: 100%
+    // @include respond('laptop')
+    //     height:5.5rem
+    // @include respond('tab-land')
+    //     height:5rem
+    // @include respond ('phone-land')
+    //     padding-top:0
+	
+    &__left 
+        display: block
+        align-items: center
+
+        & .searchArea
+            & .formControl
+                border: 0
+                background: rgb(var(--bg-shadow))
+                color: rgb(var(--text-r))
+                border-top-left-radius: 4.2rem
+                border-bottom-left-radius: 4.2rem
+                height: 4.8rem
+                padding: 0.2rem 3rem
+                font-size: 1.6rem
+                // @include respond('laptop') 
+                    // height:48px
+                &::placeholder
+                    color: rgba(var(--text-r), .2)
+        & .inputGroup
+            display: flex
+            &__text
+                display: inline-block
+                border-top-right-radius: 42px
+                border-bottom-right-radius: 42px
+                background: rgb(var(--bg-shadow))
+                color: rgb(var(--text-r))
+                height: 4.8rem
+                padding: 0rem 3rem
+                & button
+                    height: 100%
+                    // padding: 0.55rem 0
+                    & svg
+                        
+                        fill: rgba(var(--text-r), .7)
+                        height: 2.2rem
+                        width: 2.2rem
+
+
+        & .breadcrumb
+            margin-bottom:0
+
+        & .dashboard_bar 
+            font-size: 38px
+            font-weight: 400
+            color: rgb(var(--black))
+            // @include respond('tab-land') 
+            //     font-size: 34px
+            
+            // @include respond('phone-land') 
+            //     display:none
+
+        &.sub-bar
+            font-size:30px
+
+            
+        
+        // @include respond('phone-land') 
+        // 	display:none
+
+            
+
+
+
+
+
+    &__right 
+        height: 100%
+        & .nav__item 
+            height: 100%
+            display: flex
+            align-items: center
+            & .nav__ink 
+                font-size: 18px
+                color: rgb(var(--l-ctd))
+        
+        // & .right__sidebar
+        //     margin-right:-30px
+        //     a
+        //         height: 80px
+        //         width: 80px
+        //         text-align: center
+        //         justify-content: center
+        //         display: flex
+        //         align-items: center
+        //         border-left: 1px solid $light
+            
+        
+//         &>li 
+//             &:not(:first-child) 
+//                 padding-left:1.25rem
+//                 @include respond('tab-land') 
+//                     padding-left:1rem
+                
+            
+        
+        .notification__dropdown 
+            // @include respond('phone-land') 
+            //     position: static
+            
+            & .nav__link 
+                position: relative
+                color: rgb(var(--primary))
+                border-radius: var(--radius)
+                padding: 15px
+                line-height: 1
+//                 @include respond('laptop') 
+//                     padding:10px
+                
+                
+//                 i 
+//                     font-size: 24px
+//                     @include respond('laptop') 
+//                         font-size: 18px
+                    
+                    
+                
+//                 svg
+//                     @include respond('laptop') 
+//                         width:24px
+//                         height:24px
+                    
+                
+//                 .badge 
+//                     position: absolute
+//                     font-size: 0.625rem
+//                     border-radius: 50%
+//                     right: -8px
+//                     top: -4px
+//                     border:2px solid $white
+//                     font-weight: normal
+//                     height: 26px
+//                     width: 26px
+//                     line-height: 12px
+//                     text-align: center
+//                     padding: 5px
+//                     font-size: 14px
+//                     @include respond('phone') 
+//                         height: 20px
+//                         width: 20px
+//                         border-width: 2px
+//                         line-height: 7px
+//                         font-size: 9px
+                    
+                
+            
+//             .dropdown-item 
+//                 &:focus,
+//                 &:active 
+//                     a 
+//                         color: $white
+                    
+                
+//                 a 
+//                     color: $dark
+//                     &:hover 
+//                         text-decoration: none
+                    
+                
+            
+        
+//         .dropdown-menu 
+//             border-width:0
+//             box-shadow: 0 0 37px rgba(8,21,66,0.05)
+//             @at-root [data-theme-version="dark"] & 
+//                 box-shadow: none
+            
+        
+//         //search-area
+//         .search-area
+//             width: 340px
+//             .form-control
+//                 height     : 56px
+//                 background : #f3f3f3
+//                 border     : 0
+            	
+//             .input-group-text
+//                 height        : 56px
+//                 border-radius : 1rem
+//                 background    : #f3f3f3
+//                 padding       :  0 20px
+//                 i
+//                     font-size : 24px
+                
+            
+//             @include custommq ($max:1600px)
+//                 width: 250px
+            
+//             @include respond ('tab-land')
+//                 display:none
+            
+        
+//         .ai-icon
+//             height:56px
+//             width:56px
+//             background:#EEEEEE
+//             @include respond ('laptop')
+//                 height:44px
+//                 width:44px
+            
+        
+    
+//     .dz-fullscreen
+//         #icon-minimize
+//             display:none
+        
+//         &.active
+//             #icon-full
+//                 display:none
+            
+//             #icon-minimize
+//                 display:inline-block
+            
+        
+    
+// .notification_dropdown 
+//     .dropdown-menu-end 
+//         min-width: 310px
+//         padding: 0rem 0 1rem
+//         top: 100%
+		
+//         .notification_title 
+//             background: var(--primary)
+//             color: $white
+//             padding: 10px 20px
+//             h5 
+//                 color: $white
+//                 margin-bottom: 3px
+            
+        
+//         .media 
+// 			width: 45px 
+// 			height: 45px 
+// 			font-size: 18px 
+			
+//             // &:last-child
+//             //     border-bottom: 0px
+//             // 
+//             @at-root [data-theme-version="dark"] & 
+//                 border-color: $d-border
+            
+//             &>span 
+//                 width: 35px
+//                 height: 35px
+//                 border-radius: 50px
+//                 display: inline-block
+//                 padding: 7px 9px
+//                 margin-right: 10px
+// 				@at-root [direction="rtl"]#& 
+// 					 margin-right: 0
+// 					 margin-left: 10px
+				
+//                 &.success 
+//                     background: $success-light
+//                     color: $success
+                
+//                 &.primary 
+//                     background: var(--rgba-primary-1)
+//                     color: var(--primary)
+                
+//                 &.danger 
+//                     background: $danger-light
+//                     color: $danger
+                
+            
+//             .notify-time 
+//                 width: 100%
+//                 margin-right: 0
+//                 color: $l-ctl
+            
+//             p 
+//                 text-overflow: ellipsis
+//                 overflow: hidden
+//                 white-space: nowrap
+//                 max-width: 200px
+//                 margin-bottom: 0
+//                 margin-top: 5px
+// 				@include respond('phone') 
+// 				    max-width: 100px
+				
+            
+        
+//         .all-notification 
+//             display: block
+//             padding: 15px 30px 0
+//             // color: $dark
+//             text-align: center
+// 			border-top: 1px solid $light
+				
+//             i 
+//                 margin-left: 10px
+            
+        
+    
+	
+
+
+
+
+// [data-container="boxed"] 
+// 	.search-area
+// 		display:none!important
+	
+
+.collapse
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
