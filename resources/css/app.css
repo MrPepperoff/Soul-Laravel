@@ -20,3 +20,37 @@ html{
 body{
     background: rgb(var(--bg-shadow));
 }
+
+/* цвета для графика */
+html body .css-1b3bmv{ /* линия */
+    stroke: rgb(var(--primary));
+}
+html body .css-k51oex{ /* точки */
+    stroke: rgb(var(--primary));
+    fill: rgb(var(--bg-shadow));
+}
+html body .css-lwg3kc .MuiChartsAxis-tickLabel{
+    stroke: none;
+    fill: rgb(var(--text-r));
+}
+html body .css-lwg3kc .MuiChartsAxis-line,
+html body .css-lwg3kc .MuiChartsAxis-tick{
+    stroke: rgb(var(--text-r));
+}
+
+html body .MuiHighlightElement-root{
+    stroke: rgb(var(--bg-shadow));
+    fill: rgb(var(--primary));
+    transition: 0.1s ease;
+}
+html body .MuiChartsTooltip-paper{
+    background: rgb(var(--bg));
+    border: 1px solid rgb(var(--primary));
+}
+html body .MuiChartsTooltip-paper p{
+    color: rgb(var(--text-r));
+}
+html body .MuiChartsTooltip-mark{
+    border: 2px solid rgb(var(--primary));
+    background: rgb(var(--bg-shadow));
+}

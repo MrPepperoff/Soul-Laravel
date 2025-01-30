@@ -2,36 +2,48 @@ import { Dropdown, Nav, NavDropdown } from 'react-bootstrap';
 import style from './Sidebar.module.sass'
 import img from '../../../../images/1.jpg'
 import '../../../../css/dropdown.sass'
+import { useEffect, useState } from 'react';
 
 export default function Sidebar(){
+    
     const hamburger = document.querySelector('#hamburger');
-    const sidebar = document.querySelector('#sidebar');
-    if(!localStorage.getItem('mode')){
-        localStorage.setItem('mode', 'full')
-    }
-    switch(localStorage.getItem('mode')){
-        case 'full': 
+    const sidebar = document.querySelector('#sidebar');    
+
+    const mode = localStorage.getItem('mode');
+    switch(mode) {
+        case 'full':
             hamburger?.classList.remove(style.is_active); 
             sidebar?.classList.remove(style.sidebar_compact); 
             break;
-
-        case 'compact': 
-            hamburger?.classList.add(style.is_active);
-            sidebar?.classList.add(style.sidebar_compact);
+        case 'compact':
+            hamburger?.classList.add(style.is_active); 
+            sidebar?.classList.add(style.sidebar_compact); 
             break;
-    } 
-
-    hamburger?.addEventListener('click',()=>{
-        hamburger.classList.toggle(style.is_active)
-        sidebar?.classList.toggle(style.sidebar_compact);
-
-        switch (localStorage.getItem('mode')){
-            case 'full': localStorage.setItem('mode', 'compact'); break;
-            case 'compact': localStorage.setItem('mode', 'full'); break;
-        }
-    },)
+    }
+    useEffect(()=>{
+        hamburger?.addEventListener('click', ()=>{
+            const mode = localStorage.getItem('mode');
+            switch(mode) {
+                case 'full':
+                    localStorage.setItem('mode', 'compact');
+                    hamburger?.classList.add(style.is_active); 
+                    sidebar?.classList.add(style.sidebar_compact); 
+                    break;
+                case 'compact':
+                    localStorage.setItem('mode', 'full');
+                    hamburger?.classList.remove(style.is_active); 
+                    sidebar?.classList.remove(style.sidebar_compact);
+                    break;
+            }
+        });    
+    },[hamburger])
     
 
+    
+        
+    
+        
+    
     return(
     <div id='sidebar' className={style.sidebar}>
         <div className={style.nav__header}>

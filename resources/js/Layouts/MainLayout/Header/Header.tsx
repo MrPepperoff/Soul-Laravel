@@ -2,34 +2,35 @@ import { Collapse, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import style from './Header.module.sass';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Login from '@/Pages/Auth/Login';
+import { useEffect } from 'react';
 
 
 export default function Header(){
 	const header = document.querySelector('#header');
-	const hamburger = document.querySelector('#hamburger');
+    const hamburger = document.querySelector('#hamburger');
+	const mode = localStorage.getItem('mode');
 
-	switch(localStorage.getItem('mode')){
+	switch(mode){
         case 'full': 
 			header?.classList.remove(style.header_compact); 
             break;
-            
         case 'compact': 
 			header?.classList.add(style.header_compact);
             break;
     }
-
-	hamburger?.addEventListener('click',()=>{
-		switch(localStorage.getItem('mode')){
-			case 'full': 
-				header?.classList.add(style.header_compact); 
-				break;
-				
-			case 'compact': 
-				header?.classList.remove(style.header_compact);
-				break;
-		}
-	})
-
+	useEffect(()=>{
+		hamburger?.addEventListener('click',()=>{
+			switch(localStorage.getItem('mode')){
+				case 'full': 
+					header?.classList.add(style.header_compact); 
+					break;
+					
+				case 'compact': 
+					header?.classList.remove(style.header_compact);
+					break;
+			}
+		})
+	},[hamburger])
     return(
         <header className={style.header} id='header'>
             <div className={style.header__content}>

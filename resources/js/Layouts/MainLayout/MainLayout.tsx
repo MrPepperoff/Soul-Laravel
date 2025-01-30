@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 import style from './MainLayout.module.sass';
 import ApplicationLogo from '@/Components/ApplicationLogo';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Preloader from './Preloader/Preloader';
@@ -9,29 +9,29 @@ import Preloader from './Preloader/Preloader';
 export default function MainLayout({ children }: PropsWithChildren){
 	const main = document.querySelector('#main-wrapper');
 	const hamburger = document.querySelector('#hamburger');
+	const mode = localStorage.getItem('mode');
 
-	switch(localStorage.getItem('mode')){
+	switch(mode){
         case 'full': 
 			main?.classList.remove(style.main_compact); 
             break;
-            
         case 'compact': 
 			main?.classList.add(style.main_compact);
             break;
     }
-
-	hamburger?.addEventListener('click',()=>{
-		switch(localStorage.getItem('mode')){
-			case 'full': 
-				main?.classList.add(style.main_compact); 
-				break;
-				
-			case 'compact': 
-				main?.classList.remove(style.main_compact);
-				break;
-		}
-	})
-
+	useEffect(()=>{
+		hamburger?.addEventListener('click',()=>{
+			switch(localStorage.getItem('mode')){
+				case 'full': 
+					main?.classList.add(style.main_compact); 
+					break;
+					
+				case 'compact': 
+					main?.classList.remove(style.main_compact);
+					break;
+			}
+		})
+	},[hamburger])
     return(
         <>
     		<Preloader/>
